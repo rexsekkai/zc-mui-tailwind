@@ -1,4 +1,5 @@
 import { Carousel } from "@material-tailwind/react";
+import landingJpg from "../../images/Landing.jpg";
 
 export function MainCarousel() {
     return (
@@ -10,7 +11,7 @@ export function MainCarousel() {
         //     className="mx-auto h-96"
         // >
         <img
-            src="/zc-web/images/Landing/banner (1).jpg"
+            src={landingJpg}
             alt="image 1"
             className="h-auto sm:h-min w-full object-contain sm:object-cover sm:object-top"
         />

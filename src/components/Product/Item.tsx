@@ -14,6 +14,7 @@ import {
     CardFooter,
 } from "@material-tailwind/react";
 import { Product } from "../../routes/ProductLoader";
+import closeSvg from "../../icons/close.svg";
 
 export function EcommerceCard({ product, onClick }) {
     const { id, name, src } = product;
@@ -88,7 +89,7 @@ export function Item(product: Product) {
                     </div>
                     <div className="flex gap-2">
                         <IconButton variant="text" size="md" color="blue-gray" onClick={handleOpen}>
-                            <img src="/zc-web/icons/close.svg" />
+                            <img src={closeSvg} />
                         </IconButton>
                     </div>
                 </DialogHeader>

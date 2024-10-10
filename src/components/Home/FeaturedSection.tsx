@@ -83,7 +83,7 @@ export function FeaturedSection() {
             <h1 className="font-bold leading-snug tracking-tight text-slate-800 mx-auto my-6 w-full text-2xl lg:max-w-3xl lg:text-5xl">
                 Featured Items
             </h1>
-            {data.length && (
+            {data.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3 mx-auto">
                     <EcommerceCard {...data[0]} />
                     <EcommerceCard {...data[1]} />
