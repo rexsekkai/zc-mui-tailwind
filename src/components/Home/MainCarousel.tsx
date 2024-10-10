@@ -10,7 +10,7 @@ export function MainCarousel() {
         //     className="mx-auto h-96"
         // >
         <img
-            src="/images/Landing/banner (1).jpg"
+            src="/zc-web/images/Landing/banner (1).jpg"
             alt="image 1"
             className="h-auto sm:h-min w-full object-contain sm:object-cover sm:object-top"
         />
