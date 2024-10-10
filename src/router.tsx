@@ -7,11 +7,11 @@ import Layout from "./components/Layout/Layout";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/zc-web",
         element: <Layout />,
         children: [
             {
-                path: "/",
+                path: "",
                 element: <Home />,
                 loader: getHome,
             },
