@@ -54,7 +54,7 @@ export default function CategoryList(props: CategoryListProps) {
                         key={category.id}
                         className={LIST_ITEM_STYLES}
                         selected={category.id == selectedCategory}
-                        onClick={() => navigate(`/products/${category.id}`)}
+                        onClick={() => navigate(`/zc-web/products/${category.id}/1`)}
                     >
                         <ListItemPrefix>
                             <Square2StackIcon className="h-5 w-5" />
