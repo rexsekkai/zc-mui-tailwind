@@ -88,7 +88,7 @@ export function Item(product: Product) {
                     </div>
                     <div className="flex gap-2">
                         <IconButton variant="text" size="md" color="blue-gray" onClick={handleOpen}>
-                            <img src="/icons/close.svg" />
+                            <img src="/zc-web/icons/close.svg" />
                         </IconButton>
                     </div>
                 </DialogHeader>
