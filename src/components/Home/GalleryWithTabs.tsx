@@ -40,9 +40,9 @@ interface GalleryData {
 
 const ImageGridItem = ({ src }) => {
     return (
-        <div className="">
+        <div className="h-min w-full">
             <img
-                className="h-auto max-w-full rounded-lg object-contain sm:object-cover object-top"
+                className="w-full rounded-lg object-contain sm:object-cover object-top"
                 src={src}
                 alt="gallery-photo"
             />
@@ -73,36 +73,30 @@ export function GalleryWithTabs() {
                         Hundreds of Designs to express your Artistic Side
                     </h1>
                     <Tabs value={data[0]?.value}>
-                        <TabsHeader>
+                        <TabsHeader className=" md:px-8">
                             {data.map((category) => (
                                 <Tab key={category.value} value={category.value}>
                                     {category.label}
                                 </Tab>
                             ))}
                         </TabsHeader>
-                        <TabsBody className="grid grid-cols-1 gap-4 ">
+                        <TabsBody className="grid grid-cols-1 gap-4 md:p-8">
                             {data.map((category) => (
                                 <TabPanel
-                                    className="grid gap-4 bg-gray-50 rounded"
+                                    className="grid gap-4"
                                     key={category.value}
                                     value={category.value}
                                 >
-                                    <div className="gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-                                        <div className="grid gap-4">
-                                            <ImageGridItem src={category.images[0].src} />
-                                            <ImageGridItem src={category.images[1].src} />
-                                            <ImageGridItem src={category.images[2].src} />
-                                        </div>
-                                        <div className="grid gap-4">
-                                            <ImageGridItem src={category.images[3].src} />
-                                            <ImageGridItem src={category.images[4].src} />
-                                            <ImageGridItem src={category.images[5].src} />
-                                        </div>
-                                        <div className="grid gap-4">
-                                            <ImageGridItem src={category.images[6].src} />
-                                            <ImageGridItem src={category.images[7].src} />
-                                            <ImageGridItem src={category.images[8].src} />
-                                        </div>
+                                    <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+                                        <ImageGridItem src={category.images[0].src} />
+                                        <ImageGridItem src={category.images[1].src} />
+                                        <ImageGridItem src={category.images[2].src} />
+                                        <ImageGridItem src={category.images[3].src} />
+                                        <ImageGridItem src={category.images[4].src} />
+                                        <ImageGridItem src={category.images[5].src} />
+                                        <ImageGridItem src={category.images[6].src} />
+                                        <ImageGridItem src={category.images[7].src} />
+                                        <ImageGridItem src={category.images[8].src} />
                                     </div>
                                     {/* {images?.map(({ imageLink }, index) => (
                             <div key={index}>
