@@ -24,8 +24,11 @@ import {
     MenuList,
     IconButton,
 } from "@material-tailwind/react";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CategoryList from "../Product/CategoryList";
+import { NavContext, useNavContext } from "../../NavContextManagement";
+
 const navListMenuItems = [
     {
         title: "Products",
@@ -152,14 +155,25 @@ function NavListMenu() {
 }
 
 function NavList() {
+    const { categories } = useNavContext();
+
     return (
-        <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1 justify-end">
+        <List className="sm:hidden mb-4 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1 justify-end">
             {/* <NavListMenu /> */}
-            <ListItem className="gap-2 py-2 pr-4">
+            {/* <NavContext.Consumer>
+                {(context) => {
+                    const { categories } = context;
+                    return <CategoryList categories={categories} selectedCategory={"1"} />;
+                }}
+            </NavContext.Consumer> */}
+            {categories.length > 0 && (
+                <CategoryList categories={categories} selectedCategory={"1"} />
+            )}
+            {/* <ListItem className="gap-2 py-2 pr-4">
                 <Link type="" to="/#contact-us" className="font-medium text-blue-gray-900">
                     Contact Us
                 </Link>
-            </ListItem>
+            </ListItem> */}
         </List>
     );
 }
@@ -172,7 +186,7 @@ export function MegaMenuWithHover() {
     }, []);
 
     return (
-        <Navbar className="sticky top-0 z-10 mx-auto px-10 py-2" fullWidth>
+        <Navbar className="sticky top-0 z-10 mx-auto py-2" fullWidth>
             <div className="flex items-center justify-between text-blue-gray-900">
                 <Typography
                     href=""
@@ -184,10 +198,10 @@ export function MegaMenuWithHover() {
                 {/* <div className="hidden lg:block">
                     <NavList />
                 </div> */}
-                {/* <IconButton
+                <IconButton
                     variant="text"
                     color="blue-gray"
-                    className="lg:hidden"
+                    className="sm:hidden"
                     onClick={() => setOpenNav(!openNav)}
                 >
                     {openNav ? (
@@ -195,7 +209,7 @@ export function MegaMenuWithHover() {
                     ) : (
                         <Bars3Icon className="h-6 w-6" strokeWidth={2} />
                     )}
-                </IconButton> */}
+                </IconButton>
             </div>
             <Collapse open={openNav}>
                 <NavList />
